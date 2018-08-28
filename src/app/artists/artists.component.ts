@@ -19,7 +19,5 @@ export class ArtistsComponent implements OnInit {
     this.reggaeArtistsService
       .getReggaeArtists()
       .subscribe(artists => (this.reggaeArtists = artists));
-
-    console.log(this.reggaeArtists);
   }
 }
