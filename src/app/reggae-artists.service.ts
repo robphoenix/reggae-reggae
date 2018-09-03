@@ -14,7 +14,7 @@ export class ReggaeArtistsService {
 
   constructor(private http: HttpClient) {}
 
-  getReggaeArtists() {
+  getReggaeArtists(): Observable<Artists> {
     return this.http.get<Artists>(this.reggaeArtistsUrl).pipe(
       tap((artists: Artists) => console.log({ artists })),
       catchError(this.handleError<Artists>('getReggaeArtists'))

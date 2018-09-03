@@ -1,6 +1,19 @@
-<article class="pa3 pa5-ns tc">
-  <h1 class="f4 bold center mw6">Reggae Artists</h1>
-  <ul class="list p10 m10 center mw6 ba b--light-silver br2">
-    <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists">{{artist}}</li>
-  </ul>
+<article class="tc">
+
+  <form class="pv4 pl6 black-80 fl w-50">
+    <div class="measure">
+      <label for="name" class="f6 b db mb2 tl">Search for Artists</label>
+      <input id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100 br2" type="text"
+        aria-describedby="name-desc" #searchBox (keyup)="filterReggaeArtists(searchBox.value)"
+        placeholder="Name">
+    </div>
+  </form>
+
+  <div class="fl w-50">
+    <h2 class="f4 avenir light-silver">Reggae Artists</h2>
+    <ul class="list p10 m10 center mw6 ba b--light-silver br2">
+      <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists">{{artist}}</li>
+    </ul>
+  </div>
+
 </article>
