@@ -7,7 +7,9 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ReggaeArtistsService {
-  private reggaeArtistsUrl = 'src/app/reggae-artists.json';
+  private reggaeArtistsUrl =
+    // tslint:disable-next-line:max-line-length
+    'https://gist.githubusercontent.com/robphoenix/d1f7412ae0d7fbcf527cab58bb5b8153/raw/b8f61730803862964efb0f32b9842e9537c00a4d/reggae-reggae.json';
 
   constructor(private http: HttpClient) {}
 

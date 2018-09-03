@@ -18,6 +18,6 @@ export class ArtistsComponent implements OnInit {
   getReggaeHeroes() {
     this.reggaeArtistsService
       .getReggaeArtists()
-      .subscribe(artists => (this.reggaeArtists = artists));
+      .subscribe(artists => (this.reggaeArtists = artists.Reggae));
   }
 }
