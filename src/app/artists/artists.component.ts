@@ -8,6 +8,7 @@ import { ReggaeArtistsService } from '../reggae-artists.service';
   styleUrls: ['./artists.component.css']
 })
 export class ArtistsComponent implements OnInit {
+  youTubeUrl = 'https://www.youtube.com/results?search_query=';
   artists: Artists;
   reggaeArtists: string[];
 

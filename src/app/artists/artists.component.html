@@ -12,7 +12,8 @@
   <div class="fl w-50">
     <h2 class="f4 avenir light-silver">Reggae Artists</h2>
     <ul class="list p10 m10 center mw6 ba b--light-silver br2">
-      <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists">{{artist}}</li>
+      <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists"><a
+          class="fw6 db black link hover-green" target="_blank" href="{{youTubeUrl}}{{artist}}">{{artist}}</a></li>
     </ul>
   </div>
 
