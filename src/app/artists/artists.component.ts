@@ -8,9 +8,9 @@ import { ReggaeArtistsService } from '../reggae-artists.service';
   styleUrls: ['./artists.component.css']
 })
 export class ArtistsComponent implements OnInit {
-  youTubeUrl = 'https://www.youtube.com/results?search_query=';
   reggaeArtists: Artist[];
   searchTerm: string;
+  selectedArtist: Artist;
 
   constructor(private reggaeArtistsService: ReggaeArtistsService) {}
 
@@ -24,5 +24,9 @@ export class ArtistsComponent implements OnInit {
         return <Artist>{ id: i, name: artist };
       });
     });
+  }
+
+  onSelect(artist: Artist): void {
+    this.selectedArtist = artist;
   }
 }

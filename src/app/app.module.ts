@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { FilterArtistsPipe } from './filter.pipe';
+import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, ArtistsComponent, FilterArtistsPipe],
+  declarations: [AppComponent, ArtistsComponent, FilterArtistsPipe, ArtistDetailComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

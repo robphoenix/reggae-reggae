@@ -1,0 +1,15 @@
+<div *ngIf="artist" class="tc">
+
+  <h2 class="f4">{{artist.name | uppercase}}</h2>
+
+  <form class="pl6 black-80">
+    <div class="measure">
+      <label for="edit-name" class="f6 b db mb2 tl ">Edit name</label>
+      <input [(ngModel)]="artist.name" id="edit-name" class="input-reset ba b--black-20
+      pa2 mb2 db w-100 br2" type="text" placeholder="name" name="edit-name" />
+    </div>
+  </form>
+
+  <a class="fw6 db black link hover-green" target="_blank" href="{{youTubeUrl}}{{artist.name}}">YouTube</a>
+
+</div>
