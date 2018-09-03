@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Artists } from '../artists';
 import { ReggaeArtistsService } from '../reggae-artists.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { ReggaeArtistsService } from '../reggae-artists.service';
 })
 export class ArtistsComponent implements OnInit {
   youTubeUrl = 'https://www.youtube.com/results?search_query=';
-  artists: Artists;
   reggaeArtists: string[];
 
   constructor(private reggaeArtistsService: ReggaeArtistsService) {}
@@ -20,15 +18,7 @@ export class ArtistsComponent implements OnInit {
 
   getArtists() {
     this.reggaeArtistsService.getReggaeArtists().subscribe(artists => {
-      this.artists = artists;
       this.reggaeArtists = artists.Reggae;
-    });
-  }
-
-  filterReggaeArtists(term: string) {
-    this.reggaeArtists = this.artists.Reggae.filter((artist: string) => {
-      const regex: RegExp = new RegExp(term, 'gi');
-      return artist.match(regex);
     });
   }
 }

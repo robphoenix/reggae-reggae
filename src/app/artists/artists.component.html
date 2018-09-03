@@ -3,16 +3,15 @@
   <form class="pv4 pl6 black-80 fl w-50">
     <div class="measure">
       <label for="name" class="f6 b db mb2 tl">Search for Artists</label>
-      <input id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100 br2" type="text"
-        aria-describedby="name-desc" #searchBox (keyup)="filterReggaeArtists(searchBox.value)"
-        placeholder="Name">
+      <input [(ngModel)]="searchTerm" id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100 br2"
+        type="text" aria-describedby="name-desc" placeholder="Name" name="searchTerm">
     </div>
   </form>
 
   <div class="fl w-50">
     <h2 class="f4 avenir light-silver">Reggae Artists</h2>
     <ul class="list p10 m10 center mw6 ba b--light-silver br2">
-      <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists"><a
+      <li class="ph3 pv3 bb b--light-silver" *ngFor="let artist of reggaeArtists | filterArtists: searchTerm"><a
           class="fw6 db black link hover-green" target="_blank" href="{{youTubeUrl}}{{artist}}">{{artist}}</a></li>
     </ul>
   </div>
