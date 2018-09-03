@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Artist } from '../artist';
 import { ReggaeArtistsService } from '../reggae-artists.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { ReggaeArtistsService } from '../reggae-artists.service';
 })
 export class ArtistsComponent implements OnInit {
   youTubeUrl = 'https://www.youtube.com/results?search_query=';
-  reggaeArtists: string[];
+  reggaeArtists: Artist[];
+  searchTerm: string;
 
   constructor(private reggaeArtistsService: ReggaeArtistsService) {}
 
@@ -18,7 +20,9 @@ export class ArtistsComponent implements OnInit {
 
   getArtists() {
     this.reggaeArtistsService.getReggaeArtists().subscribe(artists => {
-      this.reggaeArtists = artists.Reggae;
+      this.reggaeArtists = artists.Reggae.map((artist, i) => {
+        return <Artist>{ id: i, name: artist };
+      });
     });
   }
 }
