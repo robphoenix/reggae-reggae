@@ -7,7 +7,7 @@ import { ReggaeArtistsService } from '../reggae-artists.service';
   styleUrls: ['./artists.component.css']
 })
 export class ArtistsComponent implements OnInit {
-  reggaeArtists: Object;
+  reggaeArtists: string[];
 
   constructor(private reggaeArtistsService: ReggaeArtistsService) {}
 

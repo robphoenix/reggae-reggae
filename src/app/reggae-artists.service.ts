@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { Artists } from './artists';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,9 @@ export class ReggaeArtistsService {
   constructor(private http: HttpClient) {}
 
   getReggaeArtists() {
-    return this.http.get(this.reggaeArtistsUrl).pipe(
-      map(res => res),
-      catchError(this.handleError('getReggaeArtists', []))
+    return this.http.get<Artists>(this.reggaeArtistsUrl).pipe(
+      tap((artists: Artists) => console.log({ artists })),
+      catchError(this.handleError<Artists>('getReggaeArtists'))
     );
   }
 
