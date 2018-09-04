@@ -18,7 +18,7 @@
   <div class="fl w-50">
     <h2 class="f4 avenir light-silver ">Reggae Artists</h2>
     <ul class="list p10 m10 center mw6 ba b--light-silver br2 ">
-      <li class="ph3 pv3 bb b--light-silver " *ngFor="let artist of reggaeArtists
+      <li class="pointer ph3 pv3 bb b--light-silver hover-bg-washed-green" *ngFor="let artist of reggaeArtists
       | filterArtists: searchTerm" [class.selected]="artist === selectedArtist"
         (click)="onSelect(artist)">
         {{artist.name}}
