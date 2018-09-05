@@ -1,5 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Artist } from '../artist';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-artist-detail',
@@ -12,7 +15,22 @@ export class ArtistDetailComponent implements OnInit {
 
   youTubeUrl = 'https://www.youtube.com/results?search_query=';
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private dataService: DataService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.getArtist();
+  }
+
+  getArtist(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.artist = this.dataService.getArtist(id);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

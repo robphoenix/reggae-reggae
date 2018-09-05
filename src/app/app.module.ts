@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { FilterArtistsPipe } from './filter.pipe';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [AppComponent, ArtistsComponent, FilterArtistsPipe, ArtistDetailComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

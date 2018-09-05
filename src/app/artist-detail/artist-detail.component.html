@@ -2,15 +2,31 @@
 
   <h2 class="f4">{{artist.name | uppercase}}</h2>
 
-  <form class="pl6 black-80">
-    <div class="measure">
-      <label for="edit-name" class="f6 b db mb2 tl">Edit name</label>
-      <input [(ngModel)]="artist.name" id="edit-name" class="input-reset ba b--black-20
+  <!-- <form class="pl6 black-80 tc"> -->
+
+  <div class="measure dc">
+
+
+    <label for="edit-name" class="f6 b db mb2 tl">Edit name</label>
+    <input [(ngModel)]="artist.name" id="edit-name" class="input-reset ba b--black-20
       pa2 mb2 db w-100 br2" type="text" placeholder="name" name="edit-name" />
-      <a class="fw6 db black link hover-green tr" target="_blank" href="{{youTubeUrl}}{{artist.name}}">Find
-        Artist on YouTube</a>
+
+
+    <div class="tr">
+
+      <button class="f6 link dim br2 ba ph3 pv2 mb2 mh2 dib" (click)="goBack()">Go
+        Back
+      </button>
+
+      <button class="f6 link dim br2 ba ph3 pv2 mb2 dib" (click)="goBack()">
+        <a class="black link hover-green" target="_blank" href="{{youTubeUrl}}{{artist.name}}">
+          Find Artist on YouTube
+        </a>
+      </button>
+
     </div>
-  </form>
+  </div>
+  <!-- </form> -->
 
   <div class="measure tl">
   </div>
