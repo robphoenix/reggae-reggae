@@ -9,10 +9,10 @@ describe('ReggaeArtistsService', () => {
     });
   });
 
-  it(
-    'should be created',
-    inject([ReggaeArtistsService], (service: ReggaeArtistsService) => {
+  it('should be created', inject(
+    [ReggaeArtistsService],
+    (service: ReggaeArtistsService) => {
       expect(service).toBeTruthy();
-    }),
-  );
+    },
+  ));
 });

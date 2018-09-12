@@ -10,7 +10,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./artist-detail.component.css'],
 })
 export class ArtistDetailComponent implements OnInit {
-  @Input() artist: Artist;
+  @Input()
+  artist: Artist;
 
   youTubeUrl = 'https://www.youtube.com/results?search_query=';
 
