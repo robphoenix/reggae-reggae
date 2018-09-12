@@ -12,4 +12,4 @@ before_script:
 script:
   - npm run format:ci
   - npm run lint
-  - npm run test
+  - npm run test:ci
