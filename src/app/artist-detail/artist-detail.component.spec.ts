@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ArtistDetailComponent } from './artist-detail.component';
 
 describe('ArtistDetailComponent', () => {
@@ -7,6 +10,7 @@ describe('ArtistDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule, RouterTestingModule, HttpClientTestingModule],
       declarations: [ArtistDetailComponent],
     }).compileComponents();
   }));
@@ -17,7 +21,7 @@ describe('ArtistDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,4 +1,10 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { ArtistDetailComponent } from '../artist-detail/artist-detail.component';
+import { FilterArtistsPipe } from '../filter.pipe';
 import { ArtistsComponent } from './artists.component';
 
 describe('ArtistsComponent', () => {
@@ -7,7 +13,13 @@ describe('ArtistsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ArtistsComponent],
+      imports: [RouterModule, HttpClientTestingModule, FormsModule],
+      declarations: [
+        AppComponent,
+        ArtistsComponent,
+        ArtistDetailComponent,
+        FilterArtistsPipe,
+      ],
     }).compileComponents();
   }));
 
@@ -17,7 +29,7 @@ describe('ArtistsComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
