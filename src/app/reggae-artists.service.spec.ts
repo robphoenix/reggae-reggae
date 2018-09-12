@@ -1,5 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
-
+import { inject, TestBed } from '@angular/core/testing';
 import { ReggaeArtistsService } from './reggae-artists.service';
 
 describe('ReggaeArtistsService', () => {
@@ -9,7 +8,7 @@ describe('ReggaeArtistsService', () => {
     });
   });
 
-  it('should be created', inject(
+  xit('should be created', inject(
     [ReggaeArtistsService],
     (service: ReggaeArtistsService) => {
       expect(service).toBeTruthy();
