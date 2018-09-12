@@ -3,7 +3,7 @@ import { Artist } from './artist';
 import { ReggaeArtistsService } from './reggae-artists.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   reggaeArtists: Map<number, Artist>;
@@ -27,11 +27,11 @@ export class DataService {
   getArtist(id: number): Artist {
     if (!this.reggaeArtists) {
       this.reggaeArtists = new Map();
-      this.reggaeArtistsService.getReggaeArtists().subscribe(artists => {
+      this.reggaeArtistsService.getReggaeArtists().subscribe((artists) => {
         this.setArtists(
           artists.Reggae.map((artist, i) => {
             return <Artist>{ id: i, name: artist };
-          })
+          }),
         );
       });
     }

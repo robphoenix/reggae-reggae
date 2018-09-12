@@ -6,11 +6,11 @@ import { ArtistsComponent } from './artists/artists.component';
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'detail/:id', component: ArtistDetailComponent },
-  { path: 'artists', component: ArtistsComponent }
+  { path: 'artists', component: ArtistsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

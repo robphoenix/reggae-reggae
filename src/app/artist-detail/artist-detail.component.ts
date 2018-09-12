@@ -7,18 +7,17 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-artist-detail',
   templateUrl: './artist-detail.component.html',
-  styleUrls: ['./artist-detail.component.css']
+  styleUrls: ['./artist-detail.component.css'],
 })
 export class ArtistDetailComponent implements OnInit {
-  @Input()
-  artist: Artist;
+  @Input() artist: Artist;
 
   youTubeUrl = 'https://www.youtube.com/results?search_query=';
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private dataService: DataService
+    private dataService: DataService,
   ) {}
 
   ngOnInit(): void {

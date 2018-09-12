@@ -5,7 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Artists } from './artists';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReggaeArtistsService {
   private reggaeArtistsUrl =
@@ -15,10 +15,12 @@ export class ReggaeArtistsService {
   constructor(private http: HttpClient) {}
 
   getReggaeArtists(): Observable<Artists> {
-    return this.http.get<Artists>(this.reggaeArtistsUrl).pipe(
-      tap((artists: Artists) => console.log({ artists })),
-      catchError(this.handleError<Artists>('getReggaeArtists'))
-    );
+    return this.http
+      .get<Artists>(this.reggaeArtistsUrl)
+      .pipe(
+        tap((artists: Artists) => console.log({ artists })),
+        catchError(this.handleError<Artists>('getReggaeArtists')),
+      );
   }
 
   /**
